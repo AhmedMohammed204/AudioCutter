@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AudioCutter", "AudioCutter\AudioCutter.csproj", "{BF09FCB4-DF36-4C88-8534-BC35E2F2DB2D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF09FCB4-DF36-4C88-8534-BC35E2F2DB2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF09FCB4-DF36-4C88-8534-BC35E2F2DB2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF09FCB4-DF36-4C88-8534-BC35E2F2DB2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF09FCB4-DF36-4C88-8534-BC35E2F2DB2D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {191596C5-530B-4B9F-A072-60BA71034ACC}
+	EndGlobalSection
+EndGlobal
