@@ -21,7 +21,7 @@ namespace AudioCutter
         }
         private bool _IsValidTimeSpan()
         {
-            if (tsFrom.TimeSpan == TimeSpan.Zero)
+            if (tsFrom.TimeSpan < TimeSpan.Zero)
             {
                 clsMessage.ErrorMessage("Please select a valid start time.");
                 return false;
