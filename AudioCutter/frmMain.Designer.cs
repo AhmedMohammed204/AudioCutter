@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             openFileDialog1 = new OpenFileDialog();
             btnAddAudioFile = new Button();
             lblFilePath = new Label();
@@ -164,6 +165,7 @@
             Controls.Add(lblFilePath);
             Controls.Add(btnAddAudioFile);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "frmMain";
             Text = "Audio Cutter";
             gbFrom.ResumeLayout(false);

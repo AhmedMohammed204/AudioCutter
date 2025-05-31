@@ -1,32 +1,31 @@
-﻿using AudioCutter.Classes;
-using NAudio.Wave;
+﻿using NAudio.Wave;
+using AudioCutter.Classes;
+using System.IO;
 
 public static class clsAudioCutter
 {
-    public static bool CutMp3(string inputPath, string outputPath, TimeSpan start, TimeSpan end)
+    public static bool CutMp3(string inputPath, string outputPath, TimeSpan startTime, TimeSpan endTime)
     {
         try
         {
-            using var reader = new AudioFileReader(inputPath);
-            using var writer = new WaveFileWriter(outputPath, reader.WaveFormat);
+            using var reader = new Mp3FileReader(inputPath);
+            using var writer = File.Create(outputPath);
 
-            reader.CurrentTime = start;
-
-            var buffer = new float[reader.WaveFormat.SampleRate * reader.WaveFormat.Channels];
-            while (reader.CurrentTime < end)
+            Mp3Frame frame;
+            while ((frame = reader.ReadNextFrame()) != null)
             {
-                int samplesRead = reader.Read(buffer, 0, buffer.Length);
-                if (samplesRead == 0)
+                if (reader.CurrentTime >= endTime)
                     break;
 
-                writer.WriteSamples(buffer, 0, samplesRead);
+                if (reader.CurrentTime >= startTime)
+                    writer.Write(frame.RawData, 0, frame.RawData.Length);
             }
 
             return true;
         }
         catch (Exception ex)
         {
-            clsMessage.ErrorMessage($"Error cutting audio: {ex.Message}");
+            clsMessage.ErrorMessage($"Error cutting MP3: {ex.Message}");
             return false;
         }
     }
